@@ -1,0 +1,28 @@
+<html>
+<h1>
+EECS 448 Lab08 Exercise 1
+</h1>
+<input id="password_input_1"></input>
+<input id="password_input_2"></input>
+<p id="output">Password entries must match and be at least 8 characters long.</p>
+<button id="validator", onclick=onClick()>
+Validate Password
+</button>
+<script>
+function onClick() {
+    let output = document.querySelector("#output");
+    let input1 = document.querySelector("#password_input_1").value;
+    if (input1.length < 8) {
+        console.log(input1.length);
+        output.innerHTML = "Passwords must be 8 characters or more in length."
+        return;
+    }
+    if (input1 == document.querySelector("#password_input_2").value) {
+        output.innerHTML = "Password is valid!";
+        return;
+    }
+    output.innerHTML = "The two entries do not match. Please enter the same password into both boxes to validate the password.";
+    return;
+}
+</script>
+</html>
