@@ -1,0 +1,37 @@
+<html>
+<h1>
+EECS 448 Lab08 Exercise 2
+</h1>
+<img id="picture" src="5484d9d1eab8ea3017b17e29.jfif" height=500 width=500></img>
+<button id="prev", onclick=changePic(false)>
+Previous
+</button>
+<button id="next", onclick=changePic(true)>
+Next
+</button>
+<script>
+let pics = ["5484d9d1eab8ea3017b17e29.jfif", "maxresdefault.jpg", "dogs_1280p_0.jpg", "dog-puppy-on-garden-royalty-free-image-1586966191.jpg", "322868_1100-1100x628.jpg"]
+let current = 0;
+function changePic(forward) {
+    let picture = document.querySelector("#picture");
+    if (forward) {
+        if (current == 4) {
+            current = 0;
+        }
+        else {
+            current++;
+        }
+        picture.src = pics[current];
+    } else {
+        if (current == 0) {
+            current = 4;
+        }
+        else {
+            current--;
+        }
+        picture.src = pics[current];
+    }
+    
+}
+</script>
+</html>
