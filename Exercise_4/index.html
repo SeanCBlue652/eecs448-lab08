@@ -1,0 +1,44 @@
+<html>
+<div id="text-options">
+    <h1>Text RGB values:</h1>
+    <label>Red Value:</label><input id="t-red" />
+    <label>Green Value:</label><input id="t-green" />
+    <label>Blue Value:</label><input id="t-blue" />
+</div>
+<div id="background-options">
+    <h1>Text background RGB values:</h1>
+    <label>Red Value:</label><input id="b-red" />
+    <label>Green Value:</label><input id="b-green" />
+    <label>Blue Value:</label><input id="b-blue" />
+</div>
+<div id="width-options">
+    <h1>Text width value:</h1>
+    <label>Width:</label><input id="width" />
+</div>
+<button onclick=rgb()>Update Text</button>
+<p id="text">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a vulputate lectus. Morbi id egestas velit.
+    Curabitur feugiat felis a mattis scelerisque. Integer efficitur quam odio, ac faucibus tortor blandit ut. Ut porta
+    turpis vel libero interdum, nec sodales metus posuere. Etiam non neque scelerisque, aliquet dolor in, convallis
+    libero. Sed lobortis erat dolor.
+</p>
+<script>
+    let options = [document.querySelector("#t-red"), document.querySelector("#t-green"), document.querySelector("#t-blue"), document.querySelector("#b-red"), document.querySelector("#b-green"), document.querySelector("#b-blue"), document.querySelector("#width")]
+    let text = document.querySelector("#text");
+    function rgb() {
+        options.forEach(op => {
+            if (op.id == "width") { return; }
+            if (op.value > 255) {
+                op.value = 255;
+            }
+            else if (op.value < 0) {
+                op.value = 0;
+            }
+        })
+        text.style.color = "rgb("+options[0].value+","+options[1].value+","+options[2].value+")";
+        text.style.backgroundColor = "rgb("+options[3].value+","+options[4].value+","+options[5].value+")";
+        text.style.width = options[6].value+"px";
+    }
+</script>
+
+</html>
