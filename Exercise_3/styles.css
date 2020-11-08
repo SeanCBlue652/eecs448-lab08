@@ -1,0 +1,30 @@
+h1 {
+    color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+h3 {
+    color: blue;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+p.bio {
+    color: aliceblue;
+    background-color: rgb(26, 167, 148);
+    width: fit-content;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 22pt;
+}
+
+p.bio:hover
+{
+ background-color: aliceblue;
+ color:  rgb(26, 167, 148);
+}
+
+body
+{
+ background-image: url(x3B0gJL.png);
+ background-size: 100%;
+ background-repeat: no-repeat;
+}
